@@ -40,6 +40,15 @@
   public void unregisterListener(remoteSensorEventListner listener);
   ~~~
 
+|method|detail|
+|------|------|
+|setServer|Opens TCP and UDP server.|
+|closeServer|Closes TCP and UDP server.|
+|setNetwork|Connects to server with params.|
+|registerListener|Registers remote device's sensor|
+|unregisterListener|Unregisters remote device's sensor|
+
+
 * **Data Params**
 
   Context context, int tcp_port, int udp_port

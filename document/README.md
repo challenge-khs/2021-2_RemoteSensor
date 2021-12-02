@@ -8,7 +8,8 @@
   <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 ~~~ 
-
+----
+**구성**
 * **Class:**
   ~~~ java
   public class Seterver;
@@ -25,7 +26,7 @@
   ~~~ java
   public interface remoteSensorEventListener {
     public abstract void onSensorChanged(float[] values);
-    public abstract void onAccuracyChanged(android.hardware.Sensor sensor, int accuracy);
+    public abstract void onAccuracyChanged(Sensor sensor, int accuracy);
     }
   ~~~
 

@@ -12,7 +12,7 @@
 **구성**
 * **Class:**
   ~~~ java
-  public class Seterver;
+  public class SetServer;
   public class CloseServer;   
   public class Connect;   
   public class Disconnect;
@@ -32,6 +32,14 @@
 
 
 * **Method:**
+
+|method|detail|
+|------|------|
+|setServer|Opens TCP and UDP server.|
+|closeServer|Closes TCP and UDP server.|
+|setNetwork|Connects to server with params.|
+|registerListener|Registers remote device's sensor.|
+|unregisterListener|Unregisters remote device's sensor.|
   ~~~ java
   public void setServer(Context context, int tcp_port, int udp_port);   
   public void closeServer();   
@@ -40,13 +48,7 @@
   public void unregisterListener(remoteSensorEventListner listener);
   ~~~
 
-|method|detail|
-|------|------|
-|setServer|Opens TCP and UDP server.|
-|closeServer|Closes TCP and UDP server.|
-|setNetwork|Connects to server with params.|
-|registerListener|Registers remote device's sensor|
-|unregisterListener|Unregisters remote device's sensor|
+
 
 
 * **Data Params**

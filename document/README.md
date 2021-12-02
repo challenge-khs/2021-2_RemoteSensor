@@ -1,6 +1,6 @@
-**Title**
+**Remote Sensor**
 ----
-  <_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
+  한 기기의 센서 값을 다른 기기로 전송함으로써 타 기기의 센서 값을 활용할 수 있도록 만든 라이브러리이다. Android Studio에서 원하는 애플리케이션의 lib 폴더에 해당 라이브러리를 추가한 후 우클릭>[Add as Library]를 통해 사용이 가능하다.
 
 * **URL**
 

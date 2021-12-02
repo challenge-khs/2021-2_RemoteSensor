@@ -9,6 +9,26 @@
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 ~~~ 
 
+* **Class:**
+  ~~~ java
+  public class Seterver;
+  public class CloseServer;   
+  public class Connect;   
+  public class Disconnect;
+  public class sendRequest;
+  public class sendUDP;
+  public class recvUDP;
+  public class serverSensorListener;
+  ~~~
+
+* **interface:**
+  ~~~ java
+  public interface remoteSensorEventListener {
+    public abstract void onSensorChanged(float[] values);
+    public abstract void onAccuracyChanged(android.hardware.Sensor sensor, int accuracy);
+    }
+  ~~~
+
 
 * **Method:**
   ~~~ java

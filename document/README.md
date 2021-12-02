@@ -1,7 +1,7 @@
 **Remote Sensor**
 ----
 It is an Android library that helps utilize sensor values of other devices by transmitting sensor values of one device to another.   
-After adding the library to the lib folder of the desired application in Android Studio, it can be used through "jar file right-click>[Addas Library]. In addition, since this library is based on wi-fi communication, Wi-fi permission should be added to "Android Manifest.xml".
+After adding the library to the lib folder of the desired application in Android Studio, it can be used through "jar file right-click>[Add as Library]. In addition, since this library is based on wi-fi communication, Wi-fi permission should be added to "Android Manifest.xml".
 ~~~ xml
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>

@@ -1,38 +1,26 @@
 **Remote Sensor**
 ----
-  한 기기의 센서 값을 다른 기기로 전송함으로써 타 기기의 센서 값을 활용할 수 있도록 만든 라이브러리이다. Android Studio에서 원하는 애플리케이션의 lib 폴더에 해당 라이브러리를 추가한 후 "jar 파일 우클릭>[Add as Library]"을 통해 사용이 가능하다. 또한 이 라이브러리는 wi-fi 통신을 기초로 하기 때문에 wi-fi permission에 관한 내용을 추가해야 한다.
-  '''
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-  '''
+  한 기기의 센서 값을 다른 기기로 전송함으로써 타 기기의 센서 값을 활용할 수 있도록 만든 라이브러리이다. Android Studio에서 원하는 애플리케이션의 lib 폴더에 해당 라이브러리를 추가한 후 "jar 파일 우클릭>[Add as Library]"을 통해 사용이 가능하다. 또한 이 라이브러리는 wi-fi 통신을 기초로 하기 때문에 "Android Manifest.xml"에 wi-fi permission에 관한 내용을 추가해야 한다.
+~~~ xml
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+~~~ 
 
-* **URL**
-
-  <_The URL Structure (path only, no root url)_>
 
 * **Method:**
-  
-  <_The request type_>
-
-  `GET` | `POST` | `DELETE` | `PUT`
-  
-*  **URL Params**
-
-   <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._> 
-
-   **Required:**
- 
-   `id=[integer]`
-
-   **Optional:**
- 
-   `photo_id=[alphanumeric]`
+  ~~~ java
+  public void setServer(Context context, int tcp_port, int udp_port);   
+  public void closeServer();   
+  public void setNetwork(String ip, int tcp_port, int udp_port);   
+  public void registerListener(remoteSensorEventListener listener, Sensor sensor, int samplingPeriodUs);
+  public void unregisterListener(remoteSensorEventListner listener);
+  ~~~
 
 * **Data Params**
 
-  <_If making a post request, what should the body payload look like? URL Params rules apply here too._>
+  Context context, int tcp_port, int udp_port
 
 * **Success Response:**
   

@@ -1,6 +1,6 @@
 **Remote Sensor**
 ----
-  한 기기의 센서 값을 다른 기기로 전송함으로써 타 기기의 센서 값을 활용할 수 있도록 만든 라이브러리이다.   
+  한 기기의 센서 값을 다른 기기로 전송함으로써 타 기기의 센서 값을 활용할 수 있도록 돕는 안드로이드 라이브러리이다.   
   Android Studio에서 원하는 애플리케이션의 lib 폴더에 해당 라이브러리를 추가한 후 "jar 파일 우클릭>[Add as Library]"을 통해 사용이 가능하다. 또한 이 라이브러리는 wi-fi 통신을 기초로 하기 때문에 "Android Manifest.xml"에 wi-fi permission에 관한 내용을 추가해야 한다.
 ~~~ xml
   <uses-permission android:name="android.permission.INTERNET"/>

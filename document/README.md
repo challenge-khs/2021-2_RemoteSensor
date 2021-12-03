@@ -11,7 +11,7 @@ After adding the library to the lib folder of the desired application in Android
 ----
 * **Class:**
 
-|interface|detail|
+|Class|detail|
 |------|------|
 |SetServer|It provides server functionality for the device that sends sensor values.|
 |CloseServer|It contains the functionality to close all sockets for the device that sends sensor values.|

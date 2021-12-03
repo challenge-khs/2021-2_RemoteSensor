@@ -4,6 +4,6 @@
 
 There's an API document in the document directory, so please refer to it.   
 
-Also, simple Toy apps using libraries are also available in these apk files, so it is recommended to install and use them if necessary.   
+In addition, these apk files also have a simple toy app that uses the library to display the sensor values ​​of a remote device, so it is recommended to install and use if necessary.   
 
 Thanks.

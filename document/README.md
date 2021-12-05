@@ -39,6 +39,7 @@ After adding the library to the lib folder of the desired application in Android
 |registerListener|Registers remote device's sensor calling "Connect", "recvUDP" and "sendRequest" classes.|
 |unregisterListener|Unregisters remote device's sensor calling "Disconnect" class.|
    
+</br>
    
 ### * **setServer**   
 It opens TCP and UDP sockets for server calling "SetServer" class.
@@ -119,8 +120,9 @@ SensorManager manager = (SensorManager) getSystemService(SENSOR_SERVICE);
 Sensor sensor = manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER); // Enter the sensor you want.
 remoteSensorEventListener lis = new remoteSensorEventListener() {
   @Override
-  public void onSensorChanged(float[] floats) {
-   // Implement what you want.                      
+  public void onSensorChanged(float[] values) {
+   // Implement what you want.
+   // values array is for the sensor value.
   }
   
   @Override

@@ -40,11 +40,11 @@ After adding the library to the lib folder of the desired application in Android
 |unregisterListener|Unregisters remote device's sensor calling "Disconnect" class.|
    
    
-### **setServer**   
+### * **setServer**   
+It opens TCP and UDP sockets for server calling "SetServer" class.
 ~~~ java
 public void setServer(Context context, int tcp_port, int upd_port);
 ~~~   
-It opens TCP and UDP sockets for server calling "SetServer" class.
 
 #### Parameter
 |parameter|type|detail|
@@ -61,14 +61,94 @@ rs.setServer(this, 8000, 8001);
 
 </br>
 
-### **closeServer**
+### * **closeServer**
+It closes TCP and UDP sockets for server calling "CloseServer" class. 
 ~~~ java
 public void closeServer();
 ~~~
-It closes TCP and UDP sockets for server calling "CloseServer" class.   
+  
 
 #### Simple call
 ~~~ java
 RemoteSensor rs = new RemoteSensor();
 rs.closeServer();
+~~~
+
+</br>
+
+### * **setNetwork**
+
+It sets TCP and UDP port numbers to connect to the opened server using the "setServer" method. 
+~~~ java
+public void setNetwork(String ip, int tcp_port, int udp_port);
+~~~  
+
+#### Parameter
+|parameter|type|detail|
+|---------|----|------|
+|ip|String|It needs the server's IP address.|
+|tcp_port|int|It needs the TCP port number used by the server.|
+|udp_port|int|It needs the UDP port number used by the server.|
+
+#### Simple call
+~~~ java
+RemoteSensor rs = new RemoteSensor();
+rs.setNetwork("192.168.0.22", 8000, 8001);
+~~~
+
+</br>
+
+### * **registerListener**
+
+It registers remote device's sensor calling "Connect", "recvUDP" and "sendRequest" classes. 
+~~~ java
+public void registerListener(remoteSensorEventListener listener, Sensor sensor, int samplingPeriodUS);
+~~~  
+
+#### Parameter
+|parameter|type|detail|
+|---------|----|------|
+|listener|remoteSensorEventListener(interface)|It needs to implement "onSensorChanged" and "onAccuracyChanged" as a substitute for "sensorEventListener".|
+|sensor|android.hardware.Sensor|It needs the sensor object you want to register.|
+|samplingPeriodUS|int|It is used to set delay period for sensor.|
+
+#### Simple call
+~~~ java
+RemoteSensor rs = new RemoteSensor();
+SensorManager manager = (SensorManager) getSystemService(SENSOR_SERVICE);
+Sensor sensor = manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER); // Enter the sensor you want.
+remoteSensorEventListener lis = new remoteSensorEventListener() {
+  @Override
+  public void onSensorChanged(float[] floats) {
+   // Implement what you want.                      
+  }
+  
+  @Override
+  public void onAccuracyChanged(Sensor sensor, int i) {
+   // Implement what you want.  
+  }
+
+rs.setNetwork("192.168.0.22", 8000, 8001);
+rs.registerListener(lis, sensor, SensorManager.SENSOR_DELAY_GAME); // Enter the delay you want.
+~~~
+
+
+</br>
+
+### * **unregisterListener**
+It unregisters remote device's sensor calling "Disconnect" class. 
+~~~ java
+public void unregisterListener(remoteSensorEventListner listener);
+~~~
+#### Parameter
+|parameter|type|detail|
+|---------|----|------|
+|listener|remoteSensorEventListener(interface)|It is remoteSensorEventListener to unregister.|
+
+#### Simple call
+~~~ java
+RemoteSensor rs = new RemoteSensor();
+// remoteSensorEventListener registration process
+// ...
+rs.unregisterListener(listener);
 ~~~

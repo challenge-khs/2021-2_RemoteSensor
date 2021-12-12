@@ -10,7 +10,7 @@ After adding the library to the lib folder of the desired application in Android
 ~~~ 
 ***
 ## Class
-
+There are the classes for connecting/disconnecting to other devices and registering/unregistering sensor.
 |Class|detail|
 |------|------|
 |SetServer|It provides server functionality for the device that sends sensor values.|
@@ -25,12 +25,40 @@ After adding the library to the lib folder of the desired application in Android
    
 ## Interface
 
-|interface|detail|
+remoteSensorEvent Listener is used like sensorEventListener, but the sensor value is called in form of float. and it contains two abstract methods (onSensorChanged, onAccuracyChanged).
+### **Summary**   
+|method|detail|
 |------|------|
-|remoteSensorEventListener|Uses like sensorEventListener, but the sensor value is called in form of float. and it contains two abstract methods (onSensorChanged, onAccuracyChanged).|
+|onAccuracyChanged|Called when the accuracy of the registered remote sensor has changed.|
+|onSensorChanged|Called when there is a new remote sensor value.|   
+
+</br>
+   
+### * **onAccuracyChanged**   
+Called when the accuracy of the registered remote sensor has changed. Unlike onSensorChanged(), this is only called when this accuracy value changes.
+~~~ java
+public abstract void onAccuracyChanged(Sensor sensor, int accuraccy);
+~~~   
+#### Parameter
+|parameter|type|detail|
+|---------|----|------|
+|sensor|android.hardware.Sensor|Sensor|
+|accuracy|int|The new accuracy of remote sensor, one of SensorManager.SENSOR_STATUS_*|
+
+</br>
+   
+### * **onSensorChanged**   
+Called when there is a new remote sensor value.
+~~~ java
+public abstract void onSensorChanged(float[] values);
+~~~   
+#### Parameter
+|parameter|type|detail|
+|---------|----|------|
+|values|float[]|The new sensor values of remote sensor.|
 
 ## Method
-
+### **Summary**  
 |method|detail|
 |------|------|
 |setServer|Opens TCP and UDP server calling "SetServer" class.|

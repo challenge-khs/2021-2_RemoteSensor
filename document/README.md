@@ -22,7 +22,7 @@ There are the classes for connecting/disconnecting to other devices and register
 |recvUDP|It contains the functionality to receive sensor values through UDP socket.|
 |serverSensorListener|The class is for registering sensor in remote device.|
    
-   
+***   
 ## Interface
 
 remoteSensorEvent Listener is used like sensorEventListener, but the sensor value is called in form of float. and it contains two abstract methods (onSensorChanged, onAccuracyChanged).
@@ -56,7 +56,7 @@ public abstract void onSensorChanged(float[] values);
 |parameter|type|detail|
 |---------|----|------|
 |values|float[]|The new sensor values of remote sensor.|
-
+***
 ## Method
 ### **Summary**  
 |method|detail|

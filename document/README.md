@@ -173,7 +173,7 @@ public void unregisterListener(remoteSensorEventListner listener);
 #### Parameter
 |parameter|type|detail|
 |---------|----|------|
-|listener|remoteSensorEventListener(interface)|It is remoteSensorEventListener to unregister.|
+|listener|remoteSensorEventListener(interface)|This is the parameter for remoteSensorEventListener to unregister.|
 
 #### Simple call
 ~~~ java
